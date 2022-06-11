@@ -1,0 +1,39 @@
+import java.util.*; 
+import java.io.*;
+
+class Main {
+
+  public static String StringChallenge(String sen) {
+    // code goes here  
+    int posMayor=0;
+    int longitudMayor=0;
+    String[] palabras = sen.split(" ");
+    for(int i=0; i<palabras.length;i++){
+      int contadorLetras=0;
+      String palabra=palabras[i];
+      for(int j=0; j<palabra.length();j++){
+        if(Character.isLetter(palabra.charAt(j))){
+          contadorLetras++;
+        }
+      }
+      if(contadorLetras>longitudMayor){
+        longitudMayor=contadorLetras;
+        posMayor=i;
+      }
+
+    }
+    String token = "_9is_wx0_8";
+    String aux="";
+    for(int i=0;i<palabras[posMayor].length()-1;i++){
+      aux+=palabras[posMayor].charAt(i);
+    }
+    return aux+token;
+  }
+
+  public static void main (String[] args) {  
+    // keep this function call here     
+    Scanner s = new Scanner(System.in);
+    System.out.print(StringChallenge(s.nextLine())); 
+  }
+
+}

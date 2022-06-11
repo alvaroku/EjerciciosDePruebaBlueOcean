@@ -1,0 +1,2 @@
+/* write your SQL query below */
+select count(*) from maintable_PDK4Z where FirstName LIKE "%e%" && LENGTH(LastName)>5 ;

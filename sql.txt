@@ -1,0 +1,3 @@
+/* write your SQL query below */
+
+SELECT  ReportsTo,count(ReportsTo) as Members,  cast(sum(Age)/count(ReportsTo) As signed) as "Average Age" FROM maintable_4DOEK where ReportsTo is not null group by ReportsTo;

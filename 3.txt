@@ -1,0 +1,32 @@
+from itertools import combinations
+ 
+def ArrayChallenge(arr):
+  s="false"
+  # code goes here
+  A = arr
+  mayor=max(A)
+  
+  A.remove(mayor)
+  
+  li=[]
+  temp = combinations(A, 2)
+  li+=[list(temp)]
+ 
+  temp = combinations(A, 3)
+  li+=[list(temp)]
+  temp = combinations(A, 4)
+  li+=[list(temp)]
+   
+  for i in range(len(li)):
+    suma=0
+    for j in range(len(li[i])):
+      if(sum(li[i][j])==mayor):
+        s="true"
+        break
+  
+  
+  return s
+
+
+# keep this function call here 
+print ArrayChallenge(raw_input())
